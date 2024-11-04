@@ -103,12 +103,17 @@ class MinHeap {
         }
     }
 
-
+    // Metodo para actualizar el precio
     public setPrecio(ref: string, newPrecio: number){
         //let newHeap: Producto[] = new Array();
-        for(let i = 0; i< this.heap.length; i++){
-            if (ref == this.heap[i].getNombre()){
+        for(let i = 0; i < this.heap.length; i++){
+            let nombre = this.heap[i].getNombre();
+            if (ref == nombre){
                 this.heap[i].setPrecio(newPrecio);
+                console.log('Se actualizo el precio')
+            }
+            else{
+                console.log('No existe el producto')
             }
             // newHeap[i] = this.heap[i];
         }
